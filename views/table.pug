@@ -1,0 +1,12 @@
+- const tableHeaders = ['#', 'Coin', 'Price', '24h', 'Market Cap', '24h']
+div(class="pt-4")
+  table(class="w-full text-lg text-right table-fixed")
+    thead(class="text-gray-600 border-b-[1px] border-t-[1px] border-gray-100")
+      th(class="w-14 text-center py-4") #
+      th(class="text-left pl-8") Coin
+      th(class="") Price
+      th(class="") 24h
+      th(class="") Market Cap
+      th(class="") 24h
+    tbody(hx-get="/table" hx-swap="innerHTML" hx-trigger="load")
+      

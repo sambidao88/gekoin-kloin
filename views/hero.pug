@@ -1,0 +1,25 @@
+div#hero(class="flex flex-row justify-between space-x-2 mt-8")
+  div#hero_1(class="flex-1 space-y-2")
+    div#card_1(class="border-2 boder-gray-100 rounded-lg px-4 py-2")
+      div(hx-get="/total_market_cap", hx-swap="innerHTML" hx-trigger="load delay:1000ms")
+      div
+        h2.text-gray-500 Total Market Cap
+    div#card_2(class="border-2 boder-gray-100 rounded-lg px-4 py-2")
+      div(hx-get="/total_coins", hx-swap="innerHTML" hx-trigger="load delay:3000ms")
+      div
+        h2.text-gray-500 Total Active Coins
+  div#hero_2(class="border-2 boder-gray-100 flex-1 rounded-lg px-4 py-2")
+    div#trending_coin
+      div#title_hero_2(class="flex flex-row justify-between")
+        h2(class="text-gray-700 text-lg font-semibold") 🔥 Trending
+        a
+          span(class="text-sm font-medium text-gray-700") View more
+      div#list_hero_2(hx-get="/trending" hx-trigger="load" hx-swap="outterHTML")
+  div#hero_3(class="border-2 boder-gray-100 flex-1 rounded-lg px-4 py-2")
+    div#largest_coin
+    div#trending_coin
+      div#title_hero_3(class="flex flex-row justify-between")
+        h2(class="text-gray-700 text-lg font-semibold") 🚀 Dollars
+        a 
+          span(class="text-sm font-medium text-gray-700") View more
+      div#list_hero_3(hx-get="/usd_coin" hx-trigger="load" hx-swap="outterHTML")
